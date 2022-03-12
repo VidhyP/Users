@@ -1,6 +1,6 @@
 package ca.sait.users.dataaccess;
 
-import ca.sait.lab6.models.*;
+import ca.sait.users.models.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

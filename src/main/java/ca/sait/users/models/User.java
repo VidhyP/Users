@@ -1,6 +1,5 @@
 package ca.sait.users.models;
 
-import ca.sait.lab6.models.Role;
 import java.io.Serializable;
 
 /**

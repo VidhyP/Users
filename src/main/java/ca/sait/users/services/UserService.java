@@ -1,7 +1,7 @@
 package ca.sait.users.services;
 
-import ca.sait.lab6.dataaccess.UserDB;
-import ca.sait.lab6.models.*;
+import ca.sait.users.dataaccess.UserDB;
+import ca.sait.users.models.*;
 import java.util.List;
 
 public class UserService {

@@ -1,7 +1,7 @@
 package ca.sait.users.servlets;
 
-import ca.sait.lab6.models.User;
-import ca.sait.lab6.services.UserService;
+import ca.sait.users.models.User;
+import ca.sait.users.services.UserService;
 import java.io.IOException;
 import java.util.*;
 import java.util.logging.*;

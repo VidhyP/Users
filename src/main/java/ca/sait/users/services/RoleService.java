@@ -1,7 +1,7 @@
 package ca.sait.users.services;
 
-import ca.sait.lab6.dataaccess.RoleDB;
-import ca.sait.lab6.models.Role;
+import ca.sait.users.dataaccess.RoleDB;
+import ca.sait.users.models.Role;
 import java.util.List;
 
 public class RoleService {

@@ -13,12 +13,13 @@
             <h1>User Management System</h1>
             <div class="row">
                 <div class="col">
-                    <table class="table">
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>Email</th>
                                 <th>First Name</th>
                                 <th>Last Name</th>
+                                <th>Role</th>
                                 <th>Active</th>
                                 <th>Actions</th>
                             </tr>
@@ -29,10 +30,11 @@
                                     <td>${user.email}</td>
                                     <td>${user.firstName}</td>
                                     <td>${user.lastName}</td>
+                                    <td>${user.role.name}</td>
                                     <td>${user.active ? "Yes" : "No" }</td>
                                     <td>
-                                        <a href="">Edit</a>
-                                        <a href="">Delete</a>
+                                        <a href="users?action=edit&email=${user.email}">Edit</a>
+                                        <a href="users?action=delete&email=${user.email}">Delete</a>
                                     </td>
                                 </tr>
                             </c:forEach>
@@ -40,6 +42,65 @@
                     </table>
                 </div>
             </div>
+            <form method="POST" action="users">
+                <h4>Add a user</h4>
+                <input type="hidden" name="action" value="add">
+                <div>
+                    <label for="email">Email: </label> 
+                    <input type="email" name="email" required>
+                </div>
+                <div>
+                    <label for="fname">First Name: </label> 
+                    <input type="text" name="fname" required>
+                </div>
+                <div>
+                    <label for="lname">Last Name: </label> 
+                    <input type="text" name="lname" required>
+                </div>
+                <div>
+                    <label for="password">Password: </label> 
+                    <input type="password" name="passwd" required>
+                </div>
+                <div>
+                    <label>User Role:</label>
+                    <select name="role">
+                        <option value="regular user">regular user</option>
+                        <option value="system admin">system admin</option>
+                        <option value="company admin">company admin</option>
+                    </select>
+                </div>
+                <button type="submit">Add</button>
+            </form>
+            <br>
+            <form method="POST" action="users">
+                <h4>Edit a user</h4>
+                <input type="hidden" name="action" value="edit">
+                <div>
+                    <label for="email">Email: </label> 
+                    <input type="email" name="email" value="${user.email}" readonly>
+                </div>
+                <div>
+                    <label for="fname">First Name: </label> 
+                    <input type="text" name="fname" value="${user.firstName}" required>
+                </div>
+                <div>
+                    <label for="lname">Last Name: </label> 
+                    <input type="text" name="lname" value="${user.lastName}" required>
+                </div>
+                <div>
+                    <label for="password">Password: </label> 
+                    <input type="password" name="passwd" value="${user.password}" required>
+                </div>
+                <div>
+                    <label>User Role:</label>
+                    <select name="role">
+                        <option value="regular user">regular user</option>
+                        <option value="system admin">system admin</option>
+                        <option value="company admin">company admin</option>
+                    </select>
+                </div>
+                <button type="submit">Change</button>
+            </form>
         </div>
     </body>
 </html>
